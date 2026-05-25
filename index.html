@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AY Gold Graphics Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Space Grotesk', sans-serif; background: #0a0a0a; color: white; overflow-x: hidden; }
+
+    /* NAVBAR */
+    nav {
+      padding: 18px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      background: linear-gradient(90deg, #FF6B9D, #FFD700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nav-links { display: flex; gap: 25px; list-style: none; }
+    .nav-links a { color: #888; text-decoration: none; font-size: 14px; transition: color 0.3s; }
+    .nav-links a:hover { color: white; }
+    .nav-cta {
+      background: linear-gradient(135deg, #FF6B9D, #FF6B35);
+      color: white !important;
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-weight: 600 !important;
+      font-size: 13px !important;
+    }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 25px; height: 2px; background: white; border-radius: 2px; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      padding: 120px 5% 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,107,157,0.12) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #aaa;
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 13px;
+      margin-bottom: 30px;
+    }
+    .dot { width: 8px; height: 8px; background: #2ECC71; border-radius: 50%; animation: blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .hero h1 {
+      font-size: clamp(36px, 7vw, 80px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      max-width: 800px;
+    }
+    .grad-text {
+      background: linear-gradient(90deg, #FF6B9D, #FFD700, #2ECC71, #3498DB);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200%;
+      animation: gradient 4s ease infinite;
+    }
+    @keyframes gradient { 0%,100%{background-position:0%} 50%{background-position:100%} }
+    .hero p { color: #666; font-size: clamp(14px, 2vw, 18px); line-height: 1.8; margin-bottom: 40px; max-width: 550px; }
+    .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+    .btn-main {
+      background: linear-gradient(135deg, #FF6B9D, #FF6B35);
+      color: white;
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-block;
+    }
+    .btn-main:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,107,157,0.4); }
+    .btn-sec {
+      background: rgba(255,255,255,0.05);
+      color: white;
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: all 0.3s;
+      display: inline-block;
+    }
+    .btn-sec:hover { border-color: #FF6B9D; color: #FF6B9D; }
+
+    /* EMOJI STRIP */
+    .emoji-strip {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 5%;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      flex-wrap: wrap;
+    }
+    .emoji-item { text-align: center; }
+    .emoji-item .emoji { font-size: 35px; display: block; margin-bottom: 8px; }
+    .emoji-item span { color: #444; font-size: 12px; }
+
+    /* STATS */
+    .stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+      padding: 0;
+    }
+    .stat {
+      flex: 1;
+      min-width: 150px;
+      text-align: center;
+      padding: 40px 20px;
+      border-right: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .stat:last-child { border-right: none; }
+    .stat h3 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .stat p { color: #444; font-size: 13px; }
+
+    /* SERVICES */
+    .services { padding: 80px 5%; }
+    .sec-label {
+      color: #444;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+    .sec-title {
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+    .sec-sub { color: #555; font-size: 15px; margin-bottom: 50px; max-width: 500px; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px;
+      background: rgba(255,255,255,0.03);
+    }
+    .service-card {
+      background: #0a0a0a;
+      padding: 35px 30px;
+      transition: background 0.3s;
+      cursor: default;
+    }
+    .service-card:hover { background: #111; }
+    .s-num { font-size: 40px; font-weight: 700; color: #1a1a1a; margin-bottom: 15px; }
+    .s-icon { font-size: 30px; margin-bottom: 12px; }
+    .service-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+    .service-card p { color: #555; font-size: 14px; line-height: 1.7; }
+
+    /* PORTFOLIO */
+    .portfolio { padding: 80px 5%; background: #050505; }
+    .port-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+      margin-top: 50px;
+    }
+    .port-card {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      height: 250px;
+      cursor: pointer;
+    }
+    .port-bg {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      transition: transform 0.3s;
+    }
+    .port-card:hover .port-bg { transform: scale(1.05); }
+    .port-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .port-tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      width: fit-content;
+    }
+    .port-overlay h3 { color: white; font-size: 16px; font-weight: 600; }
+    .port-overlay p { color: #aaa; font-size: 12px; margin-top: 3px; }
+
+    /* ABOUT */
+    .about { padding: 80px 5%; }
+    .about-wrap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 50px;
+      align-items: center;
+    }
+    .about-left p { color: #555; font-size: 15px; line-height: 1.9; margin-bottom: 15px; }
+    .pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 25px; }
+    .pill {
+      padding: 7px 18px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 500;
+      border: 1px solid;
+    }
+    .pill.p { color: #FF6B9D; border-color: rgba(255,107,157,0.3); background: rgba(255,107,157,0.05); }
+    .pill.b { color: #3498DB; border-color: rgba(52,152,219,0.3); background: rgba(52,152,219,0.05); }
+    .pill.g { color: #2ECC71; border-color: rgba(46,204,113,0.3); background: rgba(46,204,113,0.05); }
+    .pill.y { color: #FFD700; border-color: rgba(255,215,0,0.3); background: rgba(255,215,0,0.05); }
+    .pill.o { color: #FF6B35; border-color: rgba(255,107,53,0.3); background: rgba(255,107,53,0.05); }
+    .process-box {
+      background: #111;
+      border-radius: 20px;
+      padding: 35px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .process-box h3 { font-size: 20px; font-weight: 600; margin-bottom: 25px; }
+    .p-item { display: flex; gap: 15px; margin-bottom: 22px; align-items: flex-start; }
+    .p-num {
+      width: 32px; height: 32px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700; flex-shrink: 0;
+    }
+    .p-item h4 { color: white; font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+    .p-item p { color: #555; font-size: 13px; line-height: 1.5; }
+
+    /* CONTACT */
+    .contact { padding: 80px 5%; background: #050505; text-align: center; }
+    .contact-box {
+      max-width: 650px;
+      margin: 50px auto 0;
+      background: #111;
+      border-radius: 20px;
+      padding: 40px;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+    .c-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    .c-item {
+      background: #161616;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: left;
+    }
+    .c-item i { font-size: 20px; margin-bottom: 10px; display: block; }
+    .c-item h4 { color: #444; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+    .c-item p { color: white; font-size: 13px; font-weight: 500; }
+    .social-row { display: flex; justify-content: center; gap: 12px; margin-bottom: 25px; }
+    .s-btn {
+      width: 45px; height: 45px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; color: white; text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .s-btn:hover { transform: translateY(-3px); }
+    .wa-big {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: white;
+      padding: 16px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .wa-big:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(37,211,102,0.4); }
+
+    /* FOOTER */
+    footer {
+      padding: 25px 5%;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    footer p { color: #333; font-size: 13px; }
+    footer span { color: #FF6B9D; }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .stat { border-right: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">AY Gold✦</div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <div class="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      Available for new projects — Lagos, Nigeria
+    </div>
+    <h1>Creative Designs That Make Your Brand <span class="grad-text">Shine Like Gold</span></h1>
+    <p>AY Gold Graphics Design brings your brand to life with stunning visuals that captivate, inspire and convert. From logos to music covers — we do it all.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-main">Start a Project 🚀</a>
+      <a href="#portfolio" class="btn-sec">See Our Work</a>
+    </div>
+  </section>
+
+  <div class="emoji-strip">
+    <div class="emoji-item"><span class="emoji">🎨</span><span>Logo Design</span></div>
+    <div class="emoji-item"><span class="emoji">📄</span><span>Flyers</span></div>
+    <div class="emoji-item"><span class="emoji">🎂</span><span>Birthday</span></div>
+    <div class="emoji-item"><span class="emoji">📝</span><span>Letterheads</span></div>
+    <div class="emoji-item"><span class="emoji">🎵</span><span>Music Cover</span></div>
+    <div class="emoji-item"><span class="emoji">✨</span><span>Branding</span></div>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <h3 style="background:linear-gradient(135deg,#FF6B9D,#FF6B35);-webkit-background-clip:text;-webkit-text-fill-color:transparent">100+</h3>
+      <p>Designs Created</p>
+    </div>
+    <div class="stat">
+      <h3 style="background:linear-gradient(135deg,#3498DB,#9B59B6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">50+</h3>
+      <p>Happy Clients</p>
+    </div>
+    <div class="stat">
+      <h3 style="background:linear-gradient(135deg,#2ECC71,#3498DB);-webkit-background-clip:text;-webkit-text-fill-color:transparent">5+</h3>
+      <p>Years Experience</p>
+    </div>
+    <div class="stat">
+      <h3 style="background:linear-gradient(135deg,#FFD700,#FF6B35);-webkit-background-clip:text;-webkit-text-fill-color:transparent">∞</h3>
+      <p>Creative Ideas</p>
+    </div>
+  </div>
+
+  <section class="services" id="services">
+    <div class="sec-label">What We Do</div>
+    <h2 class="sec-title">Services We Offer</h2>
+    <p class="sec-sub">Everything your brand needs to look professional and stand out.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="s-num">01</div>
+        <div class="s-icon">🎨</div>
+        <h3>Logo Design</h3>
+        <p>Unique and memorable logos that capture your brand's identity and make you instantly recognizable.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-num">02</div>
+        <div class="s-icon">📄</div>
+        <h3>Flyers & Posters</h3>
+        <p>Eye-catching promotional materials that grab attention and communicate your message effectively.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-num">03</div>
+        <div class="s-icon">🎂</div>
+        <h3>Birthday Designs</h3>
+        <p>Beautiful personalized birthday graphics that make celebrations extra special and memorable.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-num">04</div>
+        <div class="s-icon">📝</div>
+        <h3>Letter Heads</h3>
+        <p>Professional letterhead designs that give your business a polished and corporate appearance.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-num">05</div>
+        <div class="s-icon">🎵</div>
+        <h3>Music Cover Art</h3>
+        <p>Stunning album and single covers that capture your music's essence and attract more listeners.</p>
+      </div>
+      <div class="service-card">
+        <div class="s-num">06</div>
+        <div class="s-icon">✨</div>
+        <h3>Brand Identity</h3>
+        <p>Complete brand identity packages giving your business a consistent and professional look everywhere.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <div class="sec-label">Our Work</div>
+    <h2 class="sec-title">Recent Projects</h2>
+    <p class="sec-sub">A glimpse of what we've created for our amazing clients.</p>
+    <div class="port-grid">
+      <div class="port-card">
+        <div class="port-bg" style="background:linear-gradient(135deg,#FF6B9D,#FF6B35)">🎨</div>
+        <div class="port-overlay">
+          <div class="port-tag">Logo Design</div>
+          <h3>Brand Identities</h3>
+          <p>Logos for Lagos businesses</p>
+        </div>
+      </div>
+      <div class="port-card">
+        <div class="port-bg" style="background:linear-gradient(135deg,#3498DB,#9B59B6)">📄</div>
+        <div class="port-overlay">
+          <div class="port-tag">Flyers</div>
+          <h3>Event Promotions</h3>
+          <p>Flyers that get noticed</p>
+        </div>
+      </div>
+      <div class="port-card">
+        <div class="port-bg" style="background:linear-gradient(135deg,#2ECC71,#3498DB)">🎵</div>
+        <div class="port-overlay">
+          <div class="port-tag">Music Art</div>
+          <h3>Album Covers</h3>
+          <p>Cover art for Nigerian artists</p>
+        </div>
+      </div>
+      <div class="port-card">
+        <div class="port-bg" style="background:linear-gradient(135deg,#FFD700,#FF6B35)">🎂</div>
+        <div class="port-overlay">
+          <div class="port-tag">Birthday</div>
+          <h3>Celebration Designs</h3>
+          <p>Making birthdays special</p>
+        </div>
+      </div>
+      <div class="port-card">
+        <div class="port-bg" style="background:linear-gradient(135deg,#9B59B6,#FF6B9D)">📝</div>
+        <div class="port-overlay">
+          <div class="port-tag">Corporate</div>
+          <h3>Business Materials</h3>
+          <p>Letterheads & documents</p>
+        </div>
+      </div>
+      <div class="port-card">
+        <div class="port-bg" style="background:linear-gradient(135deg,#FF6B35,#FFD700)">⭐</div>
+        <div class="port-overlay">
+          <div class="port-tag">Your Project</div>
+          <h3>Coming Soon</h3>
+          <p>Let's create something amazing!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-wrap">
+      <div class="about-left">
+        <div class="sec-label">About Us</div>
+        <h2 class="sec-title">We Are AY Gold Graphics</h2>
+        <p>Based in Lagos, Nigeria, AY Gold Graphics Design is a creative studio built on passion, precision and purpose. We believe great design has the power to transform businesses.</p>
+        <p>Every project we take on is treated with care and creativity — because your brand deserves nothing less than gold.</p>
+        <div class="pills">
+          <span class="pill p">Logo Design</span>
+          <span class="pill b">Flyers & Posters</span>
+          <span class="pill g">Birthday Designs</span>
+          <span class="pill y">Music Cover Art</span>
+          <span class="pill o">Brand Identity</span>
+          <span class="pill p">Letter Heads</span>
+        </div>
+      </div>
+      <div class="process-box">
+        <h3>Our Design Process</h3>
+        <div class="p-item">
+          <div class="p-num" style="background:rgba(255,107,157,0.15);color:#FF6B9D">01</div>
+          <div><h4>Brief & Discovery</h4><p>We listen to understand your vision, goals and brand personality.</p></div>
+        </div>
+        <div class="p-item">
+          <div class="p-num" style="background:rgba(52,152,219,0.15);color:#3498DB">02</div>
+          <div><h4>Concept & Design</h4><p>We create concepts tailored to your unique brand story.</p></div>
+        </div>
+        <div class="p-item">
+          <div class="p-num" style="background:rgba(46,204,113,0.15);color:#2ECC71">03</div>
+          <div><h4>Review & Refine</h4><p>We refine until you're 100% satisfied with the result.</p></div>
+        </div>
+        <div class="p-item">
+          <div class="p-num" style="background:rgba(255,215,0,0.15);color:#FFD700">04</div>
+          <div><h4>Deliver & Launch</h4><p>Final files delivered in all formats you need, ready to use!</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="sec-label" style="justify-content:center;display:flex">Get In Touch</div>
+    <h2 class="sec-title">Ready to Work Together?</h2>
+    <p class="sec-sub" style="margin:10px auto 0">Let's create something amazing for your brand today!</p>
+    <div class="contact-box">
+      <div class="c-grid">
+        <div class="c-item">
+          <i class="fab fa-whatsapp" style="color:#25D366"></i>
+          <h4>WhatsApp</h4>
+          <p>09035269002</p>
+        </div>
+        <div class="c-item">
+          <i class="fab fa-whatsapp" style="color:#25D366"></i>
+          <h4>WhatsApp 2</h4>
+          <p>07051814943</p>
+        </div>
+        <div class="c-item">
+          <i class="fab fa-instagram" style="color:#E1306C"></i>
+          <h4>Instagram</h4>
+          <p>@aygold_graphicsdesign</p>
+        </div>
+        <div class="c-item">
+          <i class="fas fa-map-marker-alt" style="color:#FF6B9D"></i>
+          <h4>Location</h4>
+          <p>Lagos, Nigeria</p>
+        </div>
+      </div>
+      <div class="social-row">
+        <a href="https://wa.me/2349035269002" class="s-btn" style="background:rgba(37,211,102,0.15)" target="_blank"><i class="fab fa-whatsapp" style="color:#25D366"></i></a>
+        <a href="https://instagram.com/aygold_graphicsdesign" class="s-btn" style="background:rgba(225,48,108,0.15)" target="_blank"><i class="fab fa-instagram" style="color:#E1306C"></i></a>
+        <a href="#" class="s-btn" style="background:rgba(24,119,242,0.15)" target="_blank"><i class="fab fa-facebook" style="color:#1877F2"></i></a>
+      </div>
+      <a href="https://wa.me/2349035269002" class="wa-big" target="_blank">
+        <i class="fab fa-whatsapp"></i> Start a Project on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 <span>AY Gold Graphics Design</span> — Lagos, Nigeria</p>
+    <p>Website by <span>Owosam Branding</span> 🔥</p>
+  </footer>
+
+</body>
+</html>
+    
+  </body>
+  
+</html>
