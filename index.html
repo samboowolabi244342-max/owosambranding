@@ -1,16 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Untitled</title>
-    
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,8 +17,6 @@
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Space Grotesk', sans-serif; background: var(--dark); color: white; overflow-x: hidden; }
-
-    /* SCANLINE EFFECT */
     body::after {
       content: '';
       position: fixed;
@@ -38,8 +25,6 @@
       pointer-events: none;
       z-index: 9999;
     }
-
-    /* CURSOR GLOW */
     .cursor {
       width: 20px; height: 20px;
       background: rgba(0,255,209,0.3);
@@ -50,8 +35,6 @@
       transition: transform 0.1s;
       mix-blend-mode: screen;
     }
-
-    /* NAVBAR */
     nav {
       padding: 20px 5%;
       display: flex;
@@ -110,8 +93,6 @@
       box-shadow: 0 0 20px rgba(0,255,209,0.4) !important;
     }
     .nav-btn::after { display: none !important; }
-
-    /* HERO */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -123,8 +104,6 @@
       position: relative;
       overflow: hidden;
     }
-
-    /* GRID BACKGROUND */
     .hero::before {
       content: '';
       position: absolute;
@@ -135,8 +114,6 @@
       background-size: 50px 50px;
       pointer-events: none;
     }
-
-    /* GLOW ORBS */
     .orb {
       position: absolute;
       border-radius: 50%;
@@ -146,7 +123,6 @@
     .orb1 { width: 400px; height: 400px; background: rgba(0,255,209,0.08); top: 10%; left: -10%; }
     .orb2 { width: 300px; height: 300px; background: rgba(255,45,120,0.08); top: 20%; right: -5%; }
     .orb3 { width: 350px; height: 350px; background: rgba(157,0,255,0.06); bottom: 10%; left: 30%; }
-
     .hero-status {
       display: inline-flex;
       align-items: center;
@@ -166,7 +142,6 @@
     }
     .status-dot { width: 6px; height: 6px; background: var(--neon); border-radius: 50%; animation: pulse 2s infinite; box-shadow: 0 0 10px var(--neon); }
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
-
     .hero h1 {
       font-family: 'Orbitron', monospace;
       font-size: clamp(32px, 6vw, 75px);
@@ -177,15 +152,8 @@
       z-index: 1;
       letter-spacing: 2px;
     }
-    .neon-text {
-      color: var(--neon);
-      text-shadow: 0 0 30px rgba(0,255,209,0.5), 0 0 60px rgba(0,255,209,0.3);
-    }
-    .pink-text {
-      color: var(--pink);
-      text-shadow: 0 0 30px rgba(255,45,120,0.5);
-    }
-
+    .neon-text { color: var(--neon); text-shadow: 0 0 30px rgba(0,255,209,0.5), 0 0 60px rgba(0,255,209,0.3); }
+    .pink-text { color: var(--pink); text-shadow: 0 0 30px rgba(255,45,120,0.5); }
     .hero-sub {
       color: #444;
       font-size: clamp(14px, 2vw, 17px);
@@ -195,9 +163,7 @@
       position: relative;
       z-index: 1;
     }
-
     .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1; }
-
     .btn-neon {
       background: transparent;
       color: var(--neon);
@@ -225,7 +191,6 @@
     }
     .btn-neon:hover { color: var(--dark); box-shadow: 0 0 30px rgba(0,255,209,0.4); }
     .btn-neon:hover::before { transform: translateX(0); }
-
     .btn-pink {
       background: transparent;
       color: var(--pink);
@@ -241,8 +206,6 @@
       display: inline-block;
     }
     .btn-pink:hover { background: var(--pink); color: white; box-shadow: 0 0 30px rgba(255,45,120,0.4); }
-
-    /* TICKER */
     .ticker {
       background: rgba(0,255,209,0.03);
       border-top: 1px solid rgba(0,255,209,0.1);
@@ -251,11 +214,7 @@
       overflow: hidden;
       white-space: nowrap;
     }
-    .ticker-inner {
-      display: inline-flex;
-      gap: 60px;
-      animation: ticker 20s linear infinite;
-    }
+    .ticker-inner { display: inline-flex; gap: 60px; animation: ticker 20s linear infinite; }
     @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
     .ticker-item {
       display: inline-flex;
@@ -268,8 +227,6 @@
       text-transform: uppercase;
     }
     .ticker-item span { color: var(--neon); font-size: 10px; }
-
-    /* STATS */
     .stats {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -299,8 +256,6 @@
       margin-bottom: 8px;
     }
     .stat p { color: #333; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
-
-    /* SERVICES */
     .services { padding: 100px 5%; }
     .sec-tag {
       color: var(--neon);
@@ -322,7 +277,6 @@
       letter-spacing: 1px;
     }
     .sec-sub { color: #444; font-size: 15px; margin-bottom: 60px; max-width: 500px; line-height: 1.8; }
-
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -367,8 +321,6 @@
       font-family: 'Orbitron', monospace;
       letter-spacing: 1px;
     }
-
-    /* PORTFOLIO */
     .portfolio { padding: 100px 5%; background: #030313; }
     .port-grid {
       display: grid;
@@ -383,6 +335,7 @@
       height: 260px;
       border: 1px solid rgba(0,255,209,0.05);
       transition: border-color 0.3s;
+      cursor: pointer;
     }
     .port-card:hover { border-color: rgba(0,255,209,0.3); }
     .port-bg {
@@ -413,8 +366,21 @@
     }
     .port-overlay h3 { color: white; font-size: 16px; font-weight: 600; }
     .port-overlay p { color: #555; font-size: 12px; margin-top: 4px; }
-
-    /* ABOUT */
+    .port-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 8px;
+      color: var(--neon);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-decoration: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .port-card:hover .port-link { opacity: 1; }
     .about { padding: 100px 5%; }
     .about-grid {
       display: grid;
@@ -423,9 +389,7 @@
       align-items: center;
     }
     .about-left p { color: #444; font-size: 15px; line-height: 1.9; margin-bottom: 20px; }
-    .skills {
-      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px;
-    }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
     .skill {
       padding: 6px 16px;
       border-radius: 2px;
@@ -439,7 +403,6 @@
     .sk2 { color: var(--pink); border-color: rgba(255,45,120,0.3); background: rgba(255,45,120,0.05); }
     .sk3 { color: var(--blue); border-color: rgba(0,180,255,0.3); background: rgba(0,180,255,0.05); }
     .sk4 { color: var(--purple); border-color: rgba(157,0,255,0.3); background: rgba(157,0,255,0.05); }
-
     .terminal {
       background: var(--card);
       border: 1px solid rgba(0,255,209,0.15);
@@ -464,8 +427,6 @@
     .t-highlight { color: white; }
     .t-cursor { display: inline-block; width: 8px; height: 14px; background: var(--neon); animation: blink2 1s infinite; vertical-align: middle; }
     @keyframes blink2 { 0%,50%{opacity:1} 51%,100%{opacity:0} }
-
-    /* CONTACT */
     .contact { padding: 100px 5%; background: #030313; text-align: center; }
     .contact-box {
       max-width: 700px;
@@ -529,8 +490,6 @@
       transition: all 0.3s;
     }
     .wa-btn:hover { background: #25D366; color: white; box-shadow: 0 0 25px rgba(37,211,102,0.4); }
-
-    /* FOOTER */
     footer {
       padding: 25px 5%;
       border-top: 1px solid rgba(0,255,209,0.05);
@@ -542,8 +501,6 @@
     }
     footer p { color: #222; font-size: 12px; letter-spacing: 1px; font-family: monospace; }
     footer span { color: var(--neon); }
-
-    /* MOBILE */
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .hero h1 { font-size: 32px; letter-spacing: 1px; }
@@ -569,20 +526,16 @@
     <div class="orb orb1"></div>
     <div class="orb orb2"></div>
     <div class="orb orb3"></div>
-
     <div class="hero-status">
       <span class="status-dot"></span>
       System Online — Lagos, Nigeria — Est. 2024
     </div>
-
     <h1>
       <span class="neon-text">WE BUILD</span><br>
       BRANDS THAT<br>
       <span class="pink-text">STAND OUT</span>
     </h1>
-
     <p class="hero-sub">Owosam Branding is a next-generation design and web development agency. We craft digital experiences that are bold, beautiful and built to convert.</p>
-
     <div class="hero-btns">
       <a href="#contact" class="btn-neon">Initialize Project</a>
       <a href="#portfolio" class="btn-pink">View Our Work</a>
@@ -680,6 +633,16 @@
           <div class="port-tag">Graphics Design</div>
           <h3>AY Gold Graphics</h3>
           <p>Creative portfolio website for designer</p>
+          <a href="https://samboowolabi244342-max.github.io/aygoldgraphics" target="_blank" class="port-link">View Live ↗</a>
+        </div>
+      </div>
+      <div class="port-card">
+        <div class="port-bg" style="background:linear-gradient(135deg,#4B0082,#8B008B,#DAA520)">🏆</div>
+        <div class="port-overlay">
+          <div class="port-tag">Awards & Luxury</div>
+          <h3>Premium Awards Emporium</h3>
+          <p>Luxury awards business site with 17 categories</p>
+          <a href="https://samboowolabi244342-max.github.io/premiumawardsemporium" target="_blank" class="port-link">View Live ↗</a>
         </div>
       </div>
       <div class="port-card">
@@ -789,7 +752,4 @@
 
 </body>
 </html>
-    
-  </body>
-  
-</html>
+ENDOFFILE
