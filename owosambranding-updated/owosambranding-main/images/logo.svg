@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Owosam Branding logo">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0c869"/>
+      <stop offset="100%" stop-color="#a8802f"/>
+    </linearGradient>
+  </defs>
+  <circle cx="34" cy="50" r="26" fill="none" stroke="url(#goldGrad)" stroke-width="9"/>
+  <text x="58" y="64" font-family="Georgia, serif" font-weight="700" font-size="52" fill="url(#goldGrad)">3</text>
+</svg>

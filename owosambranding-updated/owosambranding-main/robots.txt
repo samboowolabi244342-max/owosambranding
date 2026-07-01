@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://samboowolabi244342-max.github.io/owosambranding/sitemap.xml

@@ -1,0 +1,16 @@
+{
+  "name": "Owosam Branding",
+  "short_name": "Owosam",
+  "description": "Building Strong & Memorable Brands — Lagos branding, printing and design agency founded by Owolabi Sambo Isaac.",
+  "start_url": "/owosambranding/index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#d4a443",
+  "icons": [
+    {
+      "src": "images/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
